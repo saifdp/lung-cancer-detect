@@ -1,0 +1,574 @@
+-- MySQL Administrator dump 1.4
+--
+-- ------------------------------------------------------
+-- Server version	5.1.61-community
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+
+--
+-- Create schema lung
+--
+
+CREATE DATABASE IF NOT EXISTS lung;
+USE lung;
+
+--
+-- Definition of table `cancerdataset`
+--
+
+DROP TABLE IF EXISTS `cancerdataset`;
+CREATE TABLE `cancerdataset` (
+  `pid` varchar(30) DEFAULT NULL,
+  `age` varchar(30) DEFAULT NULL,
+  `gender` varchar(10) DEFAULT NULL,
+  `alcohol` varchar(4) DEFAULT NULL,
+  `dustalergy` varchar(3) DEFAULT NULL,
+  `smoker` varchar(4) DEFAULT NULL,
+  `chestpain` varchar(3) DEFAULT NULL,
+  `coughblood` varchar(4) DEFAULT NULL,
+  `fatigue` varchar(4) DEFAULT NULL,
+  `wloss` varchar(4) DEFAULT NULL,
+  `breath` varchar(4) DEFAULT NULL,
+  `swaldiff` varchar(4) DEFAULT NULL,
+  `clubfinger` varchar(4) DEFAULT NULL,
+  `cold` varchar(4) DEFAULT NULL,
+  `drycough` varchar(4) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `cancerdataset`
+--
+
+/*!40000 ALTER TABLE `cancerdataset` DISABLE KEYS */;
+INSERT INTO `cancerdataset` (`pid`,`age`,`gender`,`alcohol`,`dustalergy`,`smoker`,`chestpain`,`coughblood`,`fatigue`,`wloss`,`breath`,`swaldiff`,`clubfinger`,`cold`,`drycough`) VALUES 
+ ('P1','33','1','4','5','2','2','0','3','4','2','3','1','2','3'),
+ ('P10','17','1','1','5','4','2','0','1','3','7','6','2','1','7'),
+ ('P100','35','1','5','6','3','4','1','8','7','9','1','4','6','7'),
+ ('P1000','37','1','7','7','7','7','2','4','2','3','4','5','6','7'),
+ ('P101','46','1','8','7','7','7','9','3','2','4','4','2','4','2'),
+ ('P102','35','1','5','6','3','4','0','8','7','9','1','4','6','7'),
+ ('P103','52','2','4','5','2','2','4','3','4','2','3','1','2','3'),
+ ('P104','28','2','1','4','0','3','0','3','2','2','2','2','3','4'),
+ ('P105','35','2','5','6','1','6','0','1','4','3','4','6','2','4'),
+ ('P106','46','1','3','4','3','4','0','1','2','4','5','4','2','1'),
+ ('P107','44','1','7','7','8','7','0','5','3','2','8','2','4','5'),
+ ('P108','64','2','8','7','0','7','0','9','6','5','2','4','3','1'),
+ ('P109','39','2','5','6','6','6','2','5','3','2','3','1','7','5'),
+ ('P11','34','1','7','7','7','7','1','4','2','3','4','5','6','7'),
+ ('P110','27','2','1','4','0','4','2','2','2','3','1','5','2','6'),
+ ('P111','73','1','6','6','5','5','0','4','3','6','1','2','1','6'),
+ ('P112','17','1','1','5','4','2','3','1','3','7','6','2','1','7'),
+ ('P113','34','1','7','7','7','7','8','4','2','3','4','5','6','7'),
+ ('P114','36','1','7','7','7','7','0','8','5','7','7','8','7','6'),
+ ('P115','14','1','4','5','4','6','5','5','3','2','4','7','2','1'),
+ ('P116','24','1','8','7','7','9','6','5','2','5','3','2','1','7'),
+ ('P117','53','2','5','6','3','4','0','8','7','9','1','4','6','7'),
+ ('P118','62','1','8','7','7','7','0','3','2','4','4','2','4','2'),
+ ('P119','29','2','7','7','0','7','0','2','7','6','6','7','2','3'),
+ ('P12','36','1','7','7','7','7','0','8','5','7','7','8','7','6'),
+ ('P120','65','1','8','7','2','4','0','2','7','6','1','9','3','4'),
+ ('P121','38','2','1','5','2','2','0','6','7','2','8','1','3','2'),
+ ('P122','19','1','2','4','2','3','0','4','5','6','5','4','6','5'),
+ ('P123','33','1','7','7','0','7','7','4','4','5','5','5','4','6'),
+ ('P124','28','2','6','7','3','2','2','3','3','7','4','8','7','7'),
+ ('P125','35','2','6','2','8','7','0','5','5','4','5','4','6','5'),
+ ('P126','42','1','4','5','7','2','0','8','7','7','8','9','1','6'),
+ ('P127','32','2','6','7','4','8','0','3','2','6','2','3','1','2'),
+ ('P128','33','1','4','5','2','2','0','3','4','2','3','1','2','3'),
+ ('P129','25','2','1','4','4','3','0','3','2','2','2','2','3','4'),
+ ('P13','14','1','4','5','4','6','0','5','3','2','4','7','2','1'),
+ ('P130','27','2','1','4','2','4','0','2','2','3','1','5','2','6'),
+ ('P131','28','1','7','8','3','7','0','2','3','6','2','3','1','2'),
+ ('P132','32','1','3','6','3','7','4','2','1','3','2','1','2','5'),
+ ('P133','45','2','2','4','4','7','2','3','8','7','8','3','2','3'),
+ ('P134','27','2','1','4','4','3','1','3','2','2','2','2','3','4'),
+ ('P135','26','2','3','1','1','4','0','1','2','3','5','1','2','3'),
+ ('P136','48','1','2','3','5','1','0','2','6','1','4','2','1','2'),
+ ('P137','17','2','2','3','2','1','0','1','3','3','1','3','2','1'),
+ ('P138','22','1','1','3','1','1','0','3','2','1','2','4','2','1'),
+ ('P139','42','1','1','2','1','6','0','1','1','1','1','2','3','1'),
+ ('P14','24','1','8','7','7','9','0','5','2','5','3','2','1','7'),
+ ('P140','35','1','3','2','1','3','0','4','2','2','3','2','1','2'),
+ ('P141','24','2','2','2','1','1','0','1','1','1','3','4','5','2'),
+ ('P142','38','2','2','3','2','1','0','1','2','3','5','1','5','1'),
+ ('P143','18','2','2','1','2','2','0','2','2','1','4','4','1','4'),
+ ('P144','23','2','2','3','4','2','0','1','3','4','4','2','4','3'),
+ ('P145','24','2','2','2','2','3','6','2','1','2','4','2','1','1'),
+ ('P146','35','2','1','2','4','2','0','3','4','5','3','2','1','2'),
+ ('P147','38','2','2','3','5','1','3','1','1','1','1','3','2','4'),
+ ('P148','47','2','3','1','1','2','0','3','2','1','3','1','3','4'),
+ ('P149','52','2','2','1','2','1','1','1','1','1','2','3','2','3'),
+ ('P15','53','2','5','6','3','4','0','8','7','9','1','4','6','7'),
+ ('P150','44','2','3','2','6','2','2','2','2','3','1','2','3','2'),
+ ('P151','38','2','3','5','3','2','0','2','1','3','6','1','3','2'),
+ ('P152','62','2','2','1','2','3','0','4','3','2','2','4','2','3'),
+ ('P153','61','2','3','4','2','1','5','2','1','3','1','3','2','1'),
+ ('P154','55','1','1','1','2','4','0','2','5','2','2','3','4','5'),
+ ('P155','45','2','2','3','2','3','0','4','1','2','6','5','4','2'),
+ ('P156','38','1','8','7','2','4','0','2','7','6','1','9','3','4'),
+ ('P157','44','1','1','5','4','2','0','6','7','2','8','1','3','2'),
+ ('P158','45','2','2','4','2','3','0','4','5','6','5','4','6','5'),
+ ('P159','33','2','6','7','4','8','0','3','2','6','2','3','1','2'),
+ ('P16','62','1','8','7','7','7','9','3','2','4','4','2','4','2'),
+ ('P160','32','2','6','7','3','2','0','3','3','7','4','8','7','7'),
+ ('P161','44','1','2','3','2','3','0','4','1','2','6','5','4','2'),
+ ('P162','62','1','8','7','2','4','0','2','7','6','1','9','3','4'),
+ ('P163','38','2','1','5','4','2','4','6','7','2','8','1','3','2'),
+ ('P164','33','1','2','4','2','3','3','4','5','6','5','4','6','5'),
+ ('P165','22','1','8','7','2','4','0','2','7','6','1','9','3','4'),
+ ('P166','35','1','1','5','4','2','4','6','7','2','8','1','3','2'),
+ ('P167','23','1','2','4','2','3','0','4','5','6','5','4','6','5'),
+ ('P168','48','1','6','7','4','8','0','3','2','6','2','3','1','2'),
+ ('P169','46','2','6','7','3','2','0','3','3','7','4','8','7','7'),
+ ('P17','29','2','7','7','7','7','0','2','7','6','6','7','2','3'),
+ ('P170','52','2','2','3','2','3','4','4','1','2','6','5','4','2'),
+ ('P171','52','1','8','7','2','4','0','2','7','6','1','9','3','4'),
+ ('P172','48','2','8','7','2','4','3','2','7','6','1','9','3','4'),
+ ('P173','36','2','1','5','4','2','4','6','7','2','8','1','3','2'),
+ ('P174','31','2','2','4','2','3','0','4','5','6','5','4','6','5'),
+ ('P175','38','2','2','3','2','3','0','4','1','2','6','5','4','2'),
+ ('P176','35','1','8','7','2','4','0','2','7','6','1','9','3','4'),
+ ('P177','44','1','7','7','8','7','0','5','3','2','8','2','4','5'),
+ ('P178','33','1','8','7','8','7','1','9','6','5','2','4','3','1'),
+ ('P179','45','1','7','7','8','7','0','4','4','5','5','5','4','6'),
+ ('P18','65','1','8','7','2','4','0','2','7','6','1','9','3','4'),
+ ('P180','53','1','8','7','7','9','0','5','2','5','3','2','1','7'),
+ ('P181','35','2','5','6','3','4','0','8','7','9','1','4','6','7'),
+ ('P182','46','2','8','7','7','7','9','3','2','4','4','2','4','2'),
+ ('P183','27','1','7','7','7','7','0','2','7','6','6','7','2','3'),
+ ('P184','26','1','7','7','7','7','0','4','2','3','4','5','6','7'),
+ ('P185','37','1','7','7','7','7','0','8','5','7','7','8','7','6'),
+ ('P186','28','1','7','7','8','7','0','5','3','2','8','2','4','5'),
+ ('P187','19','1','8','7','8','7','0','9','6','5','2','4','3','1');
+/*!40000 ALTER TABLE `cancerdataset` ENABLE KEYS */;
+
+
+--
+-- Definition of table `cancerdataset1`
+--
+
+DROP TABLE IF EXISTS `cancerdataset1`;
+CREATE TABLE `cancerdataset1` (
+  `pid` varchar(30) DEFAULT NULL,
+  `age` varchar(30) DEFAULT NULL,
+  `gender` varchar(10) DEFAULT NULL,
+  `alcohol` varchar(4) DEFAULT NULL,
+  `dustalergy` varchar(3) DEFAULT NULL,
+  `smoker` varchar(4) DEFAULT NULL,
+  `chestpain` varchar(3) DEFAULT NULL,
+  `coughblood` varchar(4) DEFAULT NULL,
+  `fatigue` varchar(4) DEFAULT NULL,
+  `wloss` varchar(4) DEFAULT NULL,
+  `breath` varchar(4) DEFAULT NULL,
+  `swaldiff` varchar(4) DEFAULT NULL,
+  `clubfinger` varchar(4) DEFAULT NULL,
+  `cold` varchar(4) DEFAULT NULL,
+  `drycough` varchar(4) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `cancerdataset1`
+--
+
+/*!40000 ALTER TABLE `cancerdataset1` DISABLE KEYS */;
+INSERT INTO `cancerdataset1` (`pid`,`age`,`gender`,`alcohol`,`dustalergy`,`smoker`,`chestpain`,`coughblood`,`fatigue`,`wloss`,`breath`,`swaldiff`,`clubfinger`,`cold`,`drycough`) VALUES 
+ ('P1','33','Male','4','5','2','2','0','3','4','2','3','1','2','3'),
+ ('P10','17','Male','1','5','4','2','0','1','3','7','6','2','1','7'),
+ ('P100','35','Male','5','6','3','4','1','8','7','9','1','4','6','7'),
+ ('P1000','37','Male','7','7','7','7','2','4','2','3','4','5','6','7'),
+ ('P101','46','Male','8','7','7','7','9','3','2','4','4','2','4','2'),
+ ('P102','35','Male','5','6','3','4','0','8','7','9','1','4','6','7'),
+ ('P103','52','Female','4','5','2','2','4','3','4','2','3','1','2','3'),
+ ('P104','28','Female','1','4','0','3','0','3','2','2','2','2','3','4'),
+ ('P105','35','Female','5','6','1','6','0','1','4','3','4','6','2','4'),
+ ('P106','46','Male','3','4','3','4','0','1','2','4','5','4','2','1'),
+ ('P107','44','Male','7','7','8','7','0','5','3','2','8','2','4','5'),
+ ('P108','64','Female','8','7','0','7','0','9','6','5','2','4','3','1'),
+ ('P109','39','Female','5','6','6','6','2','5','3','2','3','1','7','5'),
+ ('P11','34','Male','7','7','7','7','1','4','2','3','4','5','6','7'),
+ ('P110','27','Female','1','4','0','4','2','2','2','3','1','5','2','6'),
+ ('P111','73','Male','6','6','5','5','0','4','3','6','1','2','1','6'),
+ ('P112','17','Male','1','5','4','2','3','1','3','7','6','2','1','7'),
+ ('P113','34','Male','7','7','7','7','8','4','2','3','4','5','6','7'),
+ ('P114','36','Male','7','7','7','7','0','8','5','7','7','8','7','6'),
+ ('P115','14','Male','4','5','4','6','5','5','3','2','4','7','2','1'),
+ ('P116','24','Male','8','7','7','9','6','5','2','5','3','2','1','7'),
+ ('P117','53','Female','5','6','3','4','0','8','7','9','1','4','6','7'),
+ ('P118','62','Male','8','7','7','7','0','3','2','4','4','2','4','2'),
+ ('P119','29','Female','7','7','0','7','0','2','7','6','6','7','2','3'),
+ ('P12','36','Male','7','7','7','7','0','8','5','7','7','8','7','6'),
+ ('P120','65','Male','8','7','2','4','0','2','7','6','1','9','3','4'),
+ ('P121','38','Female','1','5','2','2','0','6','7','2','8','1','3','2'),
+ ('P122','19','Male','2','4','2','3','0','4','5','6','5','4','6','5'),
+ ('P123','33','Male','7','7','0','7','7','4','4','5','5','5','4','6'),
+ ('P124','28','Female','6','7','3','2','2','3','3','7','4','8','7','7'),
+ ('P125','35','Female','6','2','8','7','0','5','5','4','5','4','6','5'),
+ ('P126','42','Male','4','5','7','2','0','8','7','7','8','9','1','6'),
+ ('P127','32','Female','6','7','4','8','0','3','2','6','2','3','1','2'),
+ ('P128','33','Male','4','5','2','2','0','3','4','2','3','1','2','3'),
+ ('P129','25','Female','1','4','4','3','0','3','2','2','2','2','3','4'),
+ ('P13','14','Male','4','5','4','6','0','5','3','2','4','7','2','1'),
+ ('P130','27','Female','1','4','2','4','0','2','2','3','1','5','2','6'),
+ ('P131','28','Male','7','8','3','7','0','2','3','6','2','3','1','2'),
+ ('P132','32','Male','3','6','3','7','4','2','1','3','2','1','2','5'),
+ ('P133','45','Female','2','4','4','7','2','3','8','7','8','3','2','3'),
+ ('P134','27','Female','1','4','4','3','1','3','2','2','2','2','3','4'),
+ ('P135','26','Female','3','1','1','4','0','1','2','3','5','1','2','3'),
+ ('P136','48','Male','2','3','5','1','0','2','6','1','4','2','1','2'),
+ ('P137','17','Female','2','3','2','1','0','1','3','3','1','3','2','1'),
+ ('P138','22','Male','1','3','1','1','0','3','2','1','2','4','2','1'),
+ ('P139','42','Male','1','2','1','6','0','1','1','1','1','2','3','1'),
+ ('P14','24','Male','8','7','7','9','0','5','2','5','3','2','1','7'),
+ ('P140','35','Male','3','2','1','3','0','4','2','2','3','2','1','2'),
+ ('P141','24','Female','2','2','1','1','0','1','1','1','3','4','5','2'),
+ ('P142','38','Female','2','3','2','1','0','1','2','3','5','1','5','1'),
+ ('P143','18','Female','2','1','2','2','0','2','2','1','4','4','1','4'),
+ ('P144','23','Female','2','3','4','2','0','1','3','4','4','2','4','3'),
+ ('P145','24','Female','2','2','2','3','6','2','1','2','4','2','1','1'),
+ ('P146','35','Female','1','2','4','2','0','3','4','5','3','2','1','2'),
+ ('P147','38','Female','2','3','5','1','3','1','1','1','1','3','2','4'),
+ ('P148','47','Female','3','1','1','2','0','3','2','1','3','1','3','4'),
+ ('P149','52','Female','2','1','2','1','1','1','1','1','2','3','2','3'),
+ ('P15','53','Female','5','6','3','4','0','8','7','9','1','4','6','7'),
+ ('P150','44','Female','3','2','6','2','2','2','2','3','1','2','3','2'),
+ ('P151','38','Female','3','5','3','2','0','2','1','3','6','1','3','2'),
+ ('P152','62','Female','2','1','2','3','0','4','3','2','2','4','2','3'),
+ ('P153','61','Female','3','4','2','1','5','2','1','3','1','3','2','1'),
+ ('P154','55','Male','1','1','2','4','0','2','5','2','2','3','4','5'),
+ ('P155','45','Female','2','3','2','3','0','4','1','2','6','5','4','2'),
+ ('P156','38','Male','8','7','2','4','0','2','7','6','1','9','3','4'),
+ ('P157','44','Male','1','5','4','2','0','6','7','2','8','1','3','2'),
+ ('P158','45','Female','2','4','2','3','0','4','5','6','5','4','6','5'),
+ ('P159','33','Female','6','7','4','8','0','3','2','6','2','3','1','2'),
+ ('P16','62','Male','8','7','7','7','9','3','2','4','4','2','4','2'),
+ ('P160','32','Female','6','7','3','2','0','3','3','7','4','8','7','7'),
+ ('P161','44','Male','2','3','2','3','0','4','1','2','6','5','4','2'),
+ ('P162','62','Male','8','7','2','4','0','2','7','6','1','9','3','4'),
+ ('P163','38','Female','1','5','4','2','4','6','7','2','8','1','3','2'),
+ ('P164','33','Male','2','4','2','3','3','4','5','6','5','4','6','5'),
+ ('P165','22','Male','8','7','2','4','0','2','7','6','1','9','3','4'),
+ ('P166','35','Male','1','5','4','2','4','6','7','2','8','1','3','2'),
+ ('P167','23','Male','2','4','2','3','0','4','5','6','5','4','6','5'),
+ ('P168','48','Male','6','7','4','8','0','3','2','6','2','3','1','2'),
+ ('P169','46','Female','6','7','3','2','0','3','3','7','4','8','7','7'),
+ ('P17','29','Female','7','7','7','7','0','2','7','6','6','7','2','3'),
+ ('P170','52','Female','2','3','2','3','4','4','1','2','6','5','4','2'),
+ ('P171','52','Male','8','7','2','4','0','2','7','6','1','9','3','4'),
+ ('P172','48','Female','8','7','2','4','3','2','7','6','1','9','3','4'),
+ ('P173','36','Female','1','5','4','2','4','6','7','2','8','1','3','2'),
+ ('P174','31','Female','2','4','2','3','0','4','5','6','5','4','6','5'),
+ ('P175','38','Female','2','3','2','3','0','4','1','2','6','5','4','2'),
+ ('P176','35','Male','8','7','2','4','0','2','7','6','1','9','3','4'),
+ ('P177','44','Male','7','7','8','7','0','5','3','2','8','2','4','5'),
+ ('P178','33','Male','8','7','8','7','1','9','6','5','2','4','3','1'),
+ ('P179','45','Male','7','7','8','7','0','4','4','5','5','5','4','6'),
+ ('P18','65','Male','8','7','2','4','0','2','7','6','1','9','3','4'),
+ ('P180','53','Male','8','7','7','9','0','5','2','5','3','2','1','7'),
+ ('P181','35','Female','5','6','3','4','0','8','7','9','1','4','6','7'),
+ ('P182','46','Female','8','7','7','7','9','3','2','4','4','2','4','2'),
+ ('P183','27','Male','7','7','7','7','0','2','7','6','6','7','2','3'),
+ ('P184','26','Male','7','7','7','7','0','4','2','3','4','5','6','7'),
+ ('P185','37','Male','7','7','7','7','0','8','5','7','7','8','7','6'),
+ ('P186','28','Male','7','7','8','7','0','5','3','2','8','2','4','5'),
+ ('P187','19','Male','8','7','8','7','0','9','6','5','2','4','3','1');
+/*!40000 ALTER TABLE `cancerdataset1` ENABLE KEYS */;
+
+
+--
+-- Definition of table `cancerdisease`
+--
+
+DROP TABLE IF EXISTS `cancerdisease`;
+CREATE TABLE `cancerdisease` (
+  `pid` varchar(30) DEFAULT NULL,
+  `age` varchar(30) DEFAULT NULL,
+  `gender` varchar(10) DEFAULT NULL,
+  `alcohol` varchar(20) DEFAULT NULL,
+  `smoker` varchar(20) DEFAULT NULL,
+  `coughblood` varchar(20) DEFAULT NULL,
+  `wloss` varchar(20) DEFAULT NULL,
+  `breath` varchar(20) DEFAULT NULL,
+  `swaldiff` varchar(20) DEFAULT NULL,
+  `drycough` varchar(20) DEFAULT NULL,
+  `res` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `cancerdisease`
+--
+
+/*!40000 ALTER TABLE `cancerdisease` DISABLE KEYS */;
+INSERT INTO `cancerdisease` (`pid`,`age`,`gender`,`alcohol`,`smoker`,`coughblood`,`wloss`,`breath`,`swaldiff`,`drycough`,`res`) VALUES 
+ ('P1','33','Male','Medium','Normal','Normal','Medium','High','High','High',' No Cancer '),
+ ('P10','17','Male','Normal','Medium','Normal','High','High','High','High',' No Cancer '),
+ ('P100','35','Male','Medium','High','High','High','High','Normal','High',' Cancer is At 3rd Stage '),
+ ('P1000','37','Male','High','High','Medium','Normal','Medium','Medium','High',' Cancer is At 2nd Stage '),
+ ('P101','46','Male','High','High','High','Normal','Medium','Medium','Normal',' No Cancer '),
+ ('P102','35','Male','Medium','High','Normal','High','High','Normal','High',' No Cancer '),
+ ('P103','52','Female','Medium','Normal','High','Medium','High','High','High',' No Cancer '),
+ ('P104','28','Female','Normal','Normal','Normal','Normal','High','Normal','Medium',' No Cancer '),
+ ('P105','35','Female','Medium','Normal','Normal','Medium','Medium','Medium','Medium',' No Cancer '),
+ ('P106','46','Male','High','High','Normal','Normal','Medium','Medium','Normal',' No Cancer '),
+ ('P107','44','Male','High','High','Normal','High','High','High','Medium',' No Cancer '),
+ ('P108','64','Female','High','Normal','Normal','High','High','Normal','Normal',' No Cancer '),
+ ('P109','39','Female','Medium','High','Medium','High','High','High','Medium',' Cancer is At 3rd Stage '),
+ ('P11','34','Male','High','High','High','Normal','Medium','Medium','High',' No Cancer '),
+ ('P110','27','Female','Normal','Normal','Medium','Normal','Medium','Normal','High',' Cancer is At 2nd Stage '),
+ ('P111','73','Male','High','Medium','Normal','High','High','Normal','High',' No Cancer '),
+ ('P112','17','Male','Normal','Medium','High','High','High','High','High',' Cancer is At 3rd Stage '),
+ ('P113','34','Male','High','High','High','Normal','Medium','Medium','High',' No Cancer '),
+ ('P114','36','Male','High','High','Normal','Medium','High','High','High',' No Cancer '),
+ ('P115','14','Male','Medium','Medium','High','High','High','Medium','Normal',' Cancer is At 3rd Stage '),
+ ('P116','24','Male','High','High','High','Normal','High','High','High',' No Cancer '),
+ ('P117','53','Female','Medium','High','Normal','High','High','Normal','High',' No Cancer '),
+ ('P118','62','Male','High','High','Normal','Normal','Medium','Medium','Normal',' No Cancer '),
+ ('P119','29','Female','High','Normal','Normal','High','High','High','High',' No Cancer '),
+ ('P12','36','Male','High','High','Normal','Medium','High','High','High',' No Cancer '),
+ ('P120','65','Male','High','Normal','Normal','High','High','Normal','Medium',' No Cancer '),
+ ('P121','38','Female','Normal','Normal','Normal','High','High','High','Normal',' No Cancer '),
+ ('P122','19','Male','Normal','Normal','Normal','Medium','High','Medium','Medium',' No Cancer '),
+ ('P123','33','Male','High','Normal','High','Medium','High','Medium','High',' No Cancer '),
+ ('P124','28','Female','High','High','Medium','High','High','Medium','High',' Cancer is At 3rd Stage '),
+ ('P125','35','Female','High','High','Normal','Medium','Medium','Medium','Medium',' Cancer is At 1nd Stage '),
+ ('P126','42','Male','Medium','High','Normal','High','High','High','High',' No Cancer '),
+ ('P127','32','Female','High','Medium','Normal','Normal','High','Normal','Normal',' No Cancer '),
+ ('P128','33','Male','Medium','Normal','Normal','Medium','High','High','High',' No Cancer '),
+ ('P129','25','Female','Normal','Medium','Normal','Normal','High','Normal','Medium',' No Cancer '),
+ ('P13','14','Male','Medium','Medium','Normal','High','High','Medium','Normal',' No Cancer '),
+ ('P130','27','Female','Normal','Normal','Normal','Normal','Medium','Normal','High',' No Cancer '),
+ ('P131','28','Male','High','High','Normal','High','High','Normal','Normal',' No Cancer '),
+ ('P132','32','Male','High','High','High','Normal','Medium','Normal','Medium',' No Cancer '),
+ ('P133','45','Female','Normal','Medium','Medium','High','High','High','High',' Cancer is At 3rd Stage '),
+ ('P134','27','Female','Normal','Medium','High','Normal','High','Normal','Medium',' No Cancer '),
+ ('P135','26','Female','High','Normal','Normal','Normal','Medium','Medium','High',' No Cancer '),
+ ('P136','48','Male','Normal','Medium','Normal','High','Normal','Medium','Normal',' No Cancer '),
+ ('P137','17','Female','Normal','Normal','Normal','High','Medium','Normal','Normal',' No Cancer '),
+ ('P138','22','Male','Normal','Normal','Normal','Normal','Normal','Normal','Normal',' Cancer is Not At Present State '),
+ ('P139','42','Male','Normal','Normal','Normal','Normal','Normal','Normal','Normal',' Cancer is Not At Present State '),
+ ('P14','24','Male','High','High','Normal','Normal','High','High','High',' No Cancer '),
+ ('P140','35','Male','High','Normal','Normal','Normal','High','High','Normal',' No Cancer '),
+ ('P141','24','Female','Normal','Normal','Normal','Normal','Normal','High','Normal',' Cancer is Not At Present State '),
+ ('P142','38','Female','Normal','Normal','Normal','Normal','Medium','Medium','Normal',' No Cancer '),
+ ('P143','18','Female','Normal','Normal','Normal','Normal','Normal','Medium','Medium',' No Cancer '),
+ ('P144','23','Female','Normal','Medium','Normal','High','Medium','Medium','High',' No Cancer '),
+ ('P145','24','Female','Normal','Normal','High','Normal','High','Medium','Normal',' No Cancer '),
+ ('P146','35','Female','Normal','Medium','Normal','Medium','High','High','Normal',' No Cancer '),
+ ('P147','38','Female','Normal','Medium','High','Normal','Normal','Normal','Medium',' No Cancer '),
+ ('P148','47','Female','High','Normal','Normal','Normal','Normal','High','Medium',' Cancer is Not At Present State '),
+ ('P149','52','Female','Normal','Normal','High','Normal','Normal','Normal','High',' No Cancer '),
+ ('P15','53','Female','Medium','High','Normal','High','High','Normal','High',' No Cancer '),
+ ('P150','44','Female','High','High','Medium','Normal','Medium','Normal','Normal',' Cancer is At 2nd Stage '),
+ ('P151','38','Female','High','High','Normal','Normal','Medium','High','Normal',' No Cancer '),
+ ('P152','62','Female','Normal','Normal','Normal','High','High','Normal','High',' No Cancer '),
+ ('P153','61','Female','High','Normal','High','Normal','Medium','Normal','Normal',' No Cancer '),
+ ('P154','55','Male','Normal','Normal','Normal','Medium','High','Normal','Medium',' No Cancer '),
+ ('P155','45','Female','Normal','Normal','Normal','Normal','High','High','Normal',' No Cancer '),
+ ('P156','38','Male','High','Normal','Normal','High','High','Normal','Medium',' No Cancer '),
+ ('P157','44','Male','Normal','Medium','Normal','High','High','High','Normal',' No Cancer '),
+ ('P158','45','Female','Normal','Normal','Normal','Medium','High','Medium','Medium',' No Cancer '),
+ ('P159','33','Female','High','Medium','Normal','Normal','High','Normal','Normal',' No Cancer '),
+ ('P16','62','Male','High','High','High','Normal','Medium','Medium','Normal',' No Cancer '),
+ ('P160','32','Female','High','High','Normal','High','High','Medium','High',' No Cancer '),
+ ('P161','44','Male','Normal','Normal','Normal','Normal','High','High','Normal',' No Cancer '),
+ ('P162','62','Male','High','Normal','Normal','High','High','Normal','Medium',' No Cancer '),
+ ('P163','38','Female','Normal','Medium','High','High','High','High','Normal',' Cancer is At 3rd Stage '),
+ ('P164','33','Male','Normal','Normal','High','Medium','High','Medium','Medium',' No Cancer '),
+ ('P165','22','Male','High','Normal','Normal','High','High','Normal','Medium',' No Cancer '),
+ ('P166','35','Male','Normal','Medium','High','High','High','High','Normal',' Cancer is At 3rd Stage '),
+ ('P167','23','Male','Normal','Normal','Normal','Medium','High','Medium','Medium',' No Cancer '),
+ ('P168','48','Male','High','Medium','Normal','Normal','High','Normal','Normal',' No Cancer '),
+ ('P169','46','Female','High','High','Normal','High','High','Medium','High',' No Cancer '),
+ ('P17','29','Female','High','High','Normal','High','High','High','High',' No Cancer '),
+ ('P170','52','Female','Normal','Normal','High','Normal','High','High','Normal',' No Cancer '),
+ ('P171','52','Male','High','Normal','Normal','High','High','Normal','Medium',' No Cancer '),
+ ('P172','48','Female','High','Normal','High','High','High','Normal','Medium',' Cancer is At 3rd Stage '),
+ ('P173','36','Female','Normal','Medium','High','High','High','High','Normal',' Cancer is At 3rd Stage '),
+ ('P174','31','Female','Normal','Normal','Normal','Medium','High','Medium','Medium',' No Cancer '),
+ ('P175','38','Female','Normal','Normal','Normal','Normal','High','High','Normal',' No Cancer '),
+ ('P176','35','Male','High','Normal','Normal','High','High','Normal','Medium',' No Cancer '),
+ ('P177','44','Male','High','High','Normal','High','High','High','Medium',' No Cancer '),
+ ('P178','33','Male','High','High','High','High','High','Normal','Normal',' Cancer is At 3rd Stage '),
+ ('P179','45','Male','High','High','Normal','Medium','High','Medium','High',' No Cancer '),
+ ('P18','65','Male','High','Normal','Normal','High','High','Normal','Medium',' No Cancer '),
+ ('P180','53','Male','High','High','Normal','Normal','High','High','High',' No Cancer '),
+ ('P181','35','Female','Medium','High','Normal','High','High','Normal','High',' No Cancer '),
+ ('P182','46','Female','High','High','High','Normal','Medium','Medium','Normal',' No Cancer '),
+ ('P183','27','Male','High','High','Normal','High','High','High','High',' No Cancer '),
+ ('P184','26','Male','High','High','Normal','Normal','Medium','Medium','High',' No Cancer '),
+ ('P185','37','Male','High','High','Normal','Medium','High','High','High',' No Cancer '),
+ ('P186','28','Male','High','High','Normal','High','High','High','Medium',' No Cancer '),
+ ('P187','19','Male','High','High','Normal','High','High','Normal','Normal',' No Cancer ');
+/*!40000 ALTER TABLE `cancerdisease` ENABLE KEYS */;
+
+
+--
+-- Definition of table `graph`
+--
+
+DROP TABLE IF EXISTS `graph`;
+CREATE TABLE `graph` (
+  `col1` varchar(100) DEFAULT NULL,
+  `col2` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `graph`
+--
+
+/*!40000 ALTER TABLE `graph` DISABLE KEYS */;
+INSERT INTO `graph` (`col1`,`col2`) VALUES 
+ ('Age(10-20) Class- Cancer is At 3rd Stage ','2'),
+ ('Age(10-20) Class- No Cancer ','6'),
+ ('Age(20-30) Class- Cancer is At 2nd Stage ','1'),
+ ('Age(20-30) Class- Cancer is At 3rd Stage ','1'),
+ ('Age(20-30) Class- Cancer is Not At Present State ','2'),
+ ('Age(20-30) Class- No Cancer ','17'),
+ ('Age(30-40) Class- Cancer is At 1nd Stage ','1'),
+ ('Age(30-40) Class- Cancer is At 2nd Stage ','1'),
+ ('Age(30-40) Class- Cancer is At 3rd Stage ','6'),
+ ('Age(30-40) Class- No Cancer ','26'),
+ ('Age(40-50) Class- Cancer is At 2nd Stage ','1'),
+ ('Age(40-50) Class- Cancer is At 3rd Stage ','2'),
+ ('Age(40-50) Class- Cancer is Not At Present State ','2'),
+ ('Age(40-50) Class- No Cancer ','14'),
+ ('Age(50-60) Class- No Cancer ','8'),
+ ('Age(>60) Class- No Cancer ','9');
+/*!40000 ALTER TABLE `graph` ENABLE KEYS */;
+
+
+--
+-- Definition of table `temp`
+--
+
+DROP TABLE IF EXISTS `temp`;
+CREATE TABLE `temp` (
+  `age` varchar(100) DEFAULT NULL,
+  `res` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `temp`
+--
+
+/*!40000 ALTER TABLE `temp` DISABLE KEYS */;
+INSERT INTO `temp` (`age`,`res`) VALUES 
+ ('Age(30-40) Class',' No Cancer '),
+ ('Age(10-20) Class',' No Cancer '),
+ ('Age(30-40) Class',' Cancer is At 3rd Stage '),
+ ('Age(30-40) Class',' Cancer is At 2nd Stage '),
+ ('Age(40-50) Class',' No Cancer '),
+ ('Age(30-40) Class',' No Cancer '),
+ ('Age(50-60) Class',' No Cancer '),
+ ('Age(20-30) Class',' No Cancer '),
+ ('Age(30-40) Class',' No Cancer '),
+ ('Age(40-50) Class',' No Cancer '),
+ ('Age(40-50) Class',' No Cancer '),
+ ('Age(>60) Class',' No Cancer '),
+ ('Age(30-40) Class',' Cancer is At 3rd Stage '),
+ ('Age(30-40) Class',' No Cancer '),
+ ('Age(20-30) Class',' Cancer is At 2nd Stage '),
+ ('Age(>60) Class',' No Cancer '),
+ ('Age(10-20) Class',' Cancer is At 3rd Stage '),
+ ('Age(30-40) Class',' No Cancer '),
+ ('Age(30-40) Class',' No Cancer '),
+ ('Age(10-20) Class',' Cancer is At 3rd Stage '),
+ ('Age(20-30) Class',' No Cancer '),
+ ('Age(50-60) Class',' No Cancer '),
+ ('Age(>60) Class',' No Cancer '),
+ ('Age(20-30) Class',' No Cancer '),
+ ('Age(30-40) Class',' No Cancer '),
+ ('Age(>60) Class',' No Cancer '),
+ ('Age(30-40) Class',' No Cancer '),
+ ('Age(10-20) Class',' No Cancer '),
+ ('Age(30-40) Class',' No Cancer '),
+ ('Age(20-30) Class',' Cancer is At 3rd Stage '),
+ ('Age(30-40) Class',' Cancer is At 1nd Stage '),
+ ('Age(40-50) Class',' No Cancer '),
+ ('Age(30-40) Class',' No Cancer '),
+ ('Age(30-40) Class',' No Cancer '),
+ ('Age(20-30) Class',' No Cancer '),
+ ('Age(10-20) Class',' No Cancer '),
+ ('Age(20-30) Class',' No Cancer '),
+ ('Age(20-30) Class',' No Cancer '),
+ ('Age(30-40) Class',' No Cancer '),
+ ('Age(40-50) Class',' Cancer is At 3rd Stage '),
+ ('Age(20-30) Class',' No Cancer '),
+ ('Age(20-30) Class',' No Cancer '),
+ ('Age(40-50) Class',' No Cancer '),
+ ('Age(10-20) Class',' No Cancer '),
+ ('Age(20-30) Class',' Cancer is Not At Present State '),
+ ('Age(40-50) Class',' Cancer is Not At Present State '),
+ ('Age(20-30) Class',' No Cancer '),
+ ('Age(30-40) Class',' No Cancer '),
+ ('Age(20-30) Class',' Cancer is Not At Present State '),
+ ('Age(30-40) Class',' No Cancer '),
+ ('Age(10-20) Class',' No Cancer '),
+ ('Age(20-30) Class',' No Cancer '),
+ ('Age(20-30) Class',' No Cancer '),
+ ('Age(30-40) Class',' No Cancer '),
+ ('Age(30-40) Class',' No Cancer '),
+ ('Age(40-50) Class',' Cancer is Not At Present State '),
+ ('Age(50-60) Class',' No Cancer '),
+ ('Age(50-60) Class',' No Cancer '),
+ ('Age(40-50) Class',' Cancer is At 2nd Stage '),
+ ('Age(30-40) Class',' No Cancer '),
+ ('Age(>60) Class',' No Cancer '),
+ ('Age(>60) Class',' No Cancer '),
+ ('Age(50-60) Class',' No Cancer '),
+ ('Age(40-50) Class',' No Cancer '),
+ ('Age(30-40) Class',' No Cancer '),
+ ('Age(40-50) Class',' No Cancer '),
+ ('Age(40-50) Class',' No Cancer '),
+ ('Age(30-40) Class',' No Cancer '),
+ ('Age(>60) Class',' No Cancer '),
+ ('Age(30-40) Class',' No Cancer '),
+ ('Age(40-50) Class',' No Cancer '),
+ ('Age(>60) Class',' No Cancer '),
+ ('Age(30-40) Class',' Cancer is At 3rd Stage '),
+ ('Age(30-40) Class',' No Cancer '),
+ ('Age(20-30) Class',' No Cancer '),
+ ('Age(30-40) Class',' Cancer is At 3rd Stage '),
+ ('Age(20-30) Class',' No Cancer '),
+ ('Age(40-50) Class',' No Cancer '),
+ ('Age(40-50) Class',' No Cancer '),
+ ('Age(20-30) Class',' No Cancer '),
+ ('Age(50-60) Class',' No Cancer '),
+ ('Age(50-60) Class',' No Cancer '),
+ ('Age(40-50) Class',' Cancer is At 3rd Stage '),
+ ('Age(30-40) Class',' Cancer is At 3rd Stage '),
+ ('Age(30-40) Class',' No Cancer '),
+ ('Age(30-40) Class',' No Cancer '),
+ ('Age(30-40) Class',' No Cancer '),
+ ('Age(40-50) Class',' No Cancer '),
+ ('Age(30-40) Class',' Cancer is At 3rd Stage '),
+ ('Age(40-50) Class',' No Cancer '),
+ ('Age(>60) Class',' No Cancer '),
+ ('Age(50-60) Class',' No Cancer '),
+ ('Age(30-40) Class',' No Cancer '),
+ ('Age(40-50) Class',' No Cancer '),
+ ('Age(20-30) Class',' No Cancer '),
+ ('Age(20-30) Class',' No Cancer '),
+ ('Age(30-40) Class',' No Cancer '),
+ ('Age(20-30) Class',' No Cancer '),
+ ('Age(10-20) Class',' No Cancer ');
+/*!40000 ALTER TABLE `temp` ENABLE KEYS */;
+
+
+
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
